@@ -1,0 +1,657 @@
+body{
+  margin:0;
+}
+#screen{
+  background-color: darkgreen;
+  width: 100vw;
+  height: 100vh;
+}
+
+/********************* menu css *******************/
+.startMenuCon{
+  background-image: url("https://pixabay.com/illustrations/coins-casino-cards-luck-money-5009449/");
+}
+
+.startMenuCon ,.nameAndAvatarMenuCon{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.betMenuCon{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#nameInput , #playersNumInput{
+    border: 2px solid darkslategrey;
+    border-radius: 5px;
+    background-color: slategrey;
+    width: 15%;
+    height: 5%;
+    text-align: center;
+}
+
+#nameInput{
+  width: 20%;
+  height: 5%;
+}
+#nameInput::placeholder{
+  color:darkslategrey;
+}
+
+
+.instructionMsg{
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  color:yellow;
+  width: 90%;
+}
+
+.playersConMenu{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+.playersConMenu > img{
+  margin:5px;
+  background-color:  darkslategrey;
+  border: 2px solid darkgray;
+
+}
+
+.playersConMenu > img:hover{
+  background-color: goldenrod;
+}
+
+.playersConMenu  .selectedAvatar{
+  background-color: goldenrod;
+
+}
+
+#coinsContainer{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.coin{
+  border: 8px dotted white;
+  color:white;
+  border-radius: 100%;
+  background-color: lightseagreen;
+  width: 70px;
+  height: 70px;
+}
+
+.coin:hover{
+  background-color:goldenrod;
+}
+
+.menuBtn{
+  border-radius: 10px;
+  background-color: darkslategrey;
+  color:white;
+  padding:5px;
+  width: 10%;
+}
+
+.menuBtn.onlyBtn{
+  width: 20%;
+}
+
+.disabledBtn{
+  opacity: 0.5;
+}
+
+#budgetDetail, #roundCountDetail{
+  position: fixed;
+  left:0;
+  top:0;
+  width:15%;
+  padding:10px;
+  background-color: black;
+  border-bottom-right-radius:20px;
+  color:white;
+  text-align: center;
+}
+
+
+/********************* game css *******************/
+
+.border{
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.dealer{
+  display: flex;
+  justify-content: center;
+  width:100%;
+}
+
+.dealer > .sprite{
+  margin:0 1%;
+}
+
+.playersCon{
+  display: flex;
+  justify-content: space-evenly;
+}
+.playerDisplayCon{
+  min-width:107px;
+ display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playerCardsCon{
+  display: flex;
+ flex-wrap: wrap;
+ position: relative;
+ min-height: 160px;
+ min-width: 120px;
+}
+
+.scoreTitle{
+  border: 2px solid dimgrey;
+  max-width: 100%;
+  min-width: 50px ;
+  height: fit-content;
+  background-color: black;
+  color: white;
+  text-align: center;
+  margin: 5%;
+}
+
+.avatar{
+  border-radius: 100%;
+  border: 2px solid darkslategrey;
+  background-color: darkgray;
+  margin: 5%;
+}
+
+
+.notPlayerTurn{
+  opacity: 0.5;
+}
+
+.btnsCon{
+  width:100%;
+  height: 10%;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-top: 2px solid lightslategrey;
+  position: fixed;
+  bottom: 0;
+}
+
+
+.gamBtn{
+  border-radius: 100%;
+    border-color: grey;
+    background-color: darkslategrey;
+    height: 6vh;
+    min-width: 6vh;
+    text-align: center;
+    padding: 1px;
+    color: floralwhite;
+}
+
+.gameBtn:hover{
+  background-color: lightsteelblue;
+}
+
+/********************* end round menu css *******************/
+
+
+#EndRoundMenuCon{
+  position: fixed;
+    top: 20vh;
+    left: 20vw;
+    width: 60vw;
+    height: 60vh;
+    background-color: firebrick;
+    border-radius: 5%;
+    border: 2px solid burlywood;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: auto;
+}
+
+#EndRoundMenuCon > .playerResultCon{
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+
+.playerStatusDisplay{
+  text-align: center;
+  color:white;
+}
+
+
+
+.menuBtn.endgameBtn{
+  width:fit-content;
+}
+
+
+/********************* sprite css *******************/
+
+
+
+.sprite {
+  background-image: url(spritesheet.png);
+  background-repeat: no-repeat;
+  display: block;
+}
+
+.sprite-back_card {
+  width: 110px;
+  height: 160px;
+  background-position: -5px -5px;
+}
+
+.sprite-bird {
+  width: 150px;
+  height: 150px;
+  background-position: -125px -5px;
+}
+
+.sprite-bird_s {
+  width: 50px;
+  height: 50px;
+  background-position: -285px -5px;
+}
+
+.sprite-blackjack_background {
+  width: 1920px;
+  height: 1276px;
+  background-position: -5px -175px;
+}
+
+.sprite-brownPuppy {
+  width: 150px;
+  height: 150px;
+  background-position: -345px -5px;
+}
+
+.sprite-brownPuppy_s {
+  width: 50px;
+  height: 50px;
+  background-position: -505px -5px;
+}
+
+.sprite-cat {
+  width: 150px;
+  height: 150px;
+  background-position: -565px -5px;
+}
+
+.sprite-cat_s {
+  width: 50px;
+  height: 50px;
+  background-position: -725px -5px;
+}
+
+.sprite-clubs-10 {
+  width: 107px;
+  height: 160px;
+  background-position: -785px -5px;
+}
+
+.sprite-clubs-2 {
+  width: 107px;
+  height: 160px;
+  background-position: -902px -5px;
+}
+
+.sprite-clubs-3 {
+  width: 107px;
+  height: 160px;
+  background-position: -1019px -5px;
+}
+
+.sprite-clubs-4 {
+  width: 107px;
+  height: 160px;
+  background-position: -1136px -5px;
+}
+
+.sprite-clubs-5 {
+  width: 107px;
+  height: 160px;
+  background-position: -1253px -5px;
+}
+
+.sprite-clubs-6 {
+  width: 107px;
+  height: 160px;
+  background-position: -1370px -5px;
+}
+
+.sprite-clubs-7 {
+  width: 107px;
+  height: 160px;
+  background-position: -1487px -5px;
+}
+
+.sprite-clubs-8 {
+  width: 107px;
+  height: 160px;
+  background-position: -1604px -5px;
+}
+
+.sprite-clubs-9 {
+  width: 107px;
+  height: 160px;
+  background-position: -1721px -5px;
+}
+
+.sprite-clubs-ace {
+  width: 107px;
+  height: 160px;
+  background-position: -5px -1461px;
+}
+
+.sprite-clubs-king {
+  width: 107px;
+  height: 160px;
+  background-position: -122px -1461px;
+}
+
+.sprite-clubs-prince {
+  width: 107px;
+  height: 160px;
+  background-position: -239px -1461px;
+}
+
+.sprite-clubs-queen {
+  width: 107px;
+  height: 160px;
+  background-position: -356px -1461px;
+}
+
+.sprite-diamonds-10 {
+  width: 107px;
+  height: 160px;
+  background-position: -473px -1461px;
+}
+
+.sprite-diamonds-2 {
+  width: 107px;
+  height: 160px;
+  background-position: -590px -1461px;
+}
+
+.sprite-diamonds-3 {
+  width: 107px;
+  height: 160px;
+  background-position: -707px -1461px;
+}
+
+.sprite-diamonds-4 {
+  width: 107px;
+  height: 160px;
+  background-position: -824px -1461px;
+}
+
+.sprite-diamonds-5 {
+  width: 107px;
+  height: 160px;
+  background-position: -941px -1461px;
+}
+
+.sprite-diamonds-6 {
+  width: 107px;
+  height: 160px;
+  background-position: -1058px -1461px;
+}
+
+.sprite-diamonds-7 {
+  width: 107px;
+  height: 160px;
+  background-position: -1175px -1461px;
+}
+
+.sprite-diamonds-8 {
+  width: 107px;
+  height: 160px;
+  background-position: -1292px -1461px;
+}
+
+.sprite-diamonds-9 {
+  width: 107px;
+  height: 160px;
+  background-position: -1409px -1461px;
+}
+
+.sprite-diamonds-ace {
+  width: 107px;
+  height: 160px;
+  background-position: -1526px -1461px;
+}
+
+.sprite-diamonds-king {
+  width: 107px;
+  height: 160px;
+  background-position: -1643px -1461px;
+}
+
+.sprite-diamonds-prince {
+  width: 107px;
+  height: 160px;
+  background-position: -1760px -1461px;
+}
+
+.sprite-diamonds-queen {
+  width: 107px;
+  height: 160px;
+  background-position: -5px -1631px;
+}
+
+.sprite-hearts-10 {
+  width: 107px;
+  height: 160px;
+  background-position: -122px -1631px;
+}
+
+.sprite-hearts-2 {
+  width: 107px;
+  height: 160px;
+  background-position: -239px -1631px;
+}
+
+.sprite-hearts-3 {
+  width: 107px;
+  height: 160px;
+  background-position: -356px -1631px;
+}
+
+.sprite-hearts-4 {
+  width: 107px;
+  height: 160px;
+  background-position: -473px -1631px;
+}
+
+.sprite-hearts-5 {
+  width: 107px;
+  height: 160px;
+  background-position: -590px -1631px;
+}
+
+.sprite-hearts-6 {
+  width: 107px;
+  height: 160px;
+  background-position: -707px -1631px;
+}
+
+.sprite-hearts-7 {
+  width: 107px;
+  height: 160px;
+  background-position: -824px -1631px;
+}
+
+.sprite-hearts-8 {
+  width: 107px;
+  height: 160px;
+  background-position: -941px -1631px;
+}
+
+.sprite-hearts-9 {
+  width: 107px;
+  height: 160px;
+  background-position: -1058px -1631px;
+}
+
+.sprite-hearts-ace {
+  width: 107px;
+  height: 160px;
+  background-position: -1175px -1631px;
+}
+
+.sprite-hearts-king {
+  width: 107px;
+  height: 160px;
+  background-position: -1292px -1631px;
+}
+
+.sprite-hearts-prince {
+  width: 107px;
+  height: 160px;
+  background-position: -1409px -1631px;
+}
+
+.sprite-hearts-queen {
+  width: 107px;
+  height: 160px;
+  background-position: -1526px -1631px;
+}
+
+.sprite-humster {
+  width: 150px;
+  height: 150px;
+  background-position: -1643px -1631px;
+}
+
+.sprite-humster_s {
+  width: 50px;
+  height: 50px;
+  background-position: -1838px -5px;
+}
+
+.sprite-monkey {
+  width: 150px;
+  height: 150px;
+  background-position: -1898px -5px;
+}
+
+.sprite-monkey_s {
+  width: 50px;
+  height: 50px;
+  background-position: -1935px -165px;
+}
+
+.sprite-spades-10 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -225px;
+}
+
+.sprite-spades-2 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -395px;
+}
+
+.sprite-spades-3 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -565px;
+}
+
+.sprite-spades-4 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -735px;
+}
+
+.sprite-spades-5 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -905px;
+}
+
+.sprite-spades-6 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -1075px;
+}
+
+.sprite-spades-7 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -1245px;
+}
+
+.sprite-spades-8 {
+  width: 107px;
+  height: 160px;
+  background-position: -1935px -1415px;
+}
+
+.sprite-spades-9 {
+  width: 107px;
+  height: 160px;
+  background-position: -1877px -1585px;
+}
+
+.sprite-spades-ace {
+  width: 107px;
+  height: 160px;
+  background-position: -1803px -1755px;
+}
+
+.sprite-spades-king {
+  width: 107px;
+  height: 160px;
+  background-position: -1920px -1755px;
+}
+
+.sprite-spades-prince {
+  width: 107px;
+  height: 160px;
+  background-position: -2058px -5px;
+}
+
+.sprite-spades-queen {
+  width: 107px;
+  height: 160px;
+  background-position: -2052px -175px;
+}
+
+.sprite-whitePuppy {
+  width: 150px;
+  height: 150px;
+  background-position: -2052px -345px;
+}
+
+.sprite-whitePuppy_s {
+  width: 50px;
+  height: 50px;
+  background-position: -2052px -505px;
+}
