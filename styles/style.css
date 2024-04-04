@@ -8,9 +8,6 @@ body{
 }
 
 /********************* menu css *******************/
-.startMenuCon{
-  background-image: url("https://pixabay.com/illustrations/coins-casino-cards-luck-money-5009449/");
-}
 
 .startMenuCon ,.nameAndAvatarMenuCon{
   display: flex;
@@ -252,8 +249,6 @@ body{
 
 /********************* sprite css *******************/
 
-
-
 .sprite {
   background-image: url(spritesheet.png);
   background-repeat: no-repeat;
@@ -276,12 +271,6 @@ body{
   width: 50px;
   height: 50px;
   background-position: -285px -5px;
-}
-
-.sprite-blackjack_background {
-  width: 1920px;
-  height: 1276px;
-  background-position: -5px -175px;
 }
 
 .sprite-brownPuppy {
@@ -323,335 +312,335 @@ body{
 .sprite-clubs-3 {
   width: 107px;
   height: 160px;
-  background-position: -1019px -5px;
+  background-position: -5px -175px;
 }
 
 .sprite-clubs-4 {
   width: 107px;
   height: 160px;
-  background-position: -1136px -5px;
+  background-position: -122px -175px;
 }
 
 .sprite-clubs-5 {
   width: 107px;
   height: 160px;
-  background-position: -1253px -5px;
+  background-position: -239px -175px;
 }
 
 .sprite-clubs-6 {
   width: 107px;
   height: 160px;
-  background-position: -1370px -5px;
+  background-position: -356px -175px;
 }
 
 .sprite-clubs-7 {
   width: 107px;
   height: 160px;
-  background-position: -1487px -5px;
+  background-position: -473px -175px;
 }
 
 .sprite-clubs-8 {
   width: 107px;
   height: 160px;
-  background-position: -1604px -5px;
+  background-position: -590px -175px;
 }
 
 .sprite-clubs-9 {
   width: 107px;
   height: 160px;
-  background-position: -1721px -5px;
+  background-position: -707px -175px;
 }
 
 .sprite-clubs-ace {
   width: 107px;
   height: 160px;
-  background-position: -5px -1461px;
+  background-position: -824px -175px;
 }
 
 .sprite-clubs-king {
   width: 107px;
   height: 160px;
-  background-position: -122px -1461px;
+  background-position: -941px -175px;
 }
 
 .sprite-clubs-prince {
   width: 107px;
   height: 160px;
-  background-position: -239px -1461px;
+  background-position: -5px -345px;
 }
 
 .sprite-clubs-queen {
   width: 107px;
   height: 160px;
-  background-position: -356px -1461px;
+  background-position: -122px -345px;
 }
 
 .sprite-diamonds-10 {
   width: 107px;
   height: 160px;
-  background-position: -473px -1461px;
+  background-position: -239px -345px;
 }
 
 .sprite-diamonds-2 {
   width: 107px;
   height: 160px;
-  background-position: -590px -1461px;
+  background-position: -356px -345px;
 }
 
 .sprite-diamonds-3 {
   width: 107px;
   height: 160px;
-  background-position: -707px -1461px;
+  background-position: -473px -345px;
 }
 
 .sprite-diamonds-4 {
   width: 107px;
   height: 160px;
-  background-position: -824px -1461px;
+  background-position: -590px -345px;
 }
 
 .sprite-diamonds-5 {
   width: 107px;
   height: 160px;
-  background-position: -941px -1461px;
+  background-position: -707px -345px;
 }
 
 .sprite-diamonds-6 {
   width: 107px;
   height: 160px;
-  background-position: -1058px -1461px;
+  background-position: -824px -345px;
 }
 
 .sprite-diamonds-7 {
   width: 107px;
   height: 160px;
-  background-position: -1175px -1461px;
+  background-position: -941px -345px;
 }
 
 .sprite-diamonds-8 {
   width: 107px;
   height: 160px;
-  background-position: -1292px -1461px;
+  background-position: -5px -515px;
 }
 
 .sprite-diamonds-9 {
   width: 107px;
   height: 160px;
-  background-position: -1409px -1461px;
+  background-position: -122px -515px;
 }
 
 .sprite-diamonds-ace {
   width: 107px;
   height: 160px;
-  background-position: -1526px -1461px;
+  background-position: -239px -515px;
 }
 
 .sprite-diamonds-king {
   width: 107px;
   height: 160px;
-  background-position: -1643px -1461px;
+  background-position: -356px -515px;
 }
 
 .sprite-diamonds-prince {
   width: 107px;
   height: 160px;
-  background-position: -1760px -1461px;
+  background-position: -473px -515px;
 }
 
 .sprite-diamonds-queen {
   width: 107px;
   height: 160px;
-  background-position: -5px -1631px;
+  background-position: -590px -515px;
 }
 
 .sprite-hearts-10 {
   width: 107px;
   height: 160px;
-  background-position: -122px -1631px;
+  background-position: -707px -515px;
 }
 
 .sprite-hearts-2 {
   width: 107px;
   height: 160px;
-  background-position: -239px -1631px;
+  background-position: -824px -515px;
 }
 
 .sprite-hearts-3 {
   width: 107px;
   height: 160px;
-  background-position: -356px -1631px;
+  background-position: -941px -515px;
 }
 
 .sprite-hearts-4 {
   width: 107px;
   height: 160px;
-  background-position: -473px -1631px;
+  background-position: -5px -685px;
 }
 
 .sprite-hearts-5 {
   width: 107px;
   height: 160px;
-  background-position: -590px -1631px;
+  background-position: -122px -685px;
 }
 
 .sprite-hearts-6 {
   width: 107px;
   height: 160px;
-  background-position: -707px -1631px;
+  background-position: -239px -685px;
 }
 
 .sprite-hearts-7 {
   width: 107px;
   height: 160px;
-  background-position: -824px -1631px;
+  background-position: -356px -685px;
 }
 
 .sprite-hearts-8 {
   width: 107px;
   height: 160px;
-  background-position: -941px -1631px;
+  background-position: -473px -685px;
 }
 
 .sprite-hearts-9 {
   width: 107px;
   height: 160px;
-  background-position: -1058px -1631px;
+  background-position: -590px -685px;
 }
 
 .sprite-hearts-ace {
   width: 107px;
   height: 160px;
-  background-position: -1175px -1631px;
+  background-position: -707px -685px;
 }
 
 .sprite-hearts-king {
   width: 107px;
   height: 160px;
-  background-position: -1292px -1631px;
+  background-position: -824px -685px;
 }
 
 .sprite-hearts-prince {
   width: 107px;
   height: 160px;
-  background-position: -1409px -1631px;
+  background-position: -941px -685px;
 }
 
 .sprite-hearts-queen {
   width: 107px;
   height: 160px;
-  background-position: -1526px -1631px;
+  background-position: -5px -855px;
 }
 
 .sprite-humster {
   width: 150px;
   height: 150px;
-  background-position: -1643px -1631px;
+  background-position: -122px -855px;
 }
 
 .sprite-humster_s {
   width: 50px;
   height: 50px;
-  background-position: -1838px -5px;
+  background-position: -1019px -5px;
 }
 
 .sprite-monkey {
   width: 150px;
   height: 150px;
-  background-position: -1898px -5px;
+  background-position: -282px -855px;
 }
 
 .sprite-monkey_s {
   width: 50px;
   height: 50px;
-  background-position: -1935px -165px;
+  background-position: -285px -65px;
 }
 
 .sprite-spades-10 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -225px;
+  background-position: -442px -855px;
 }
 
 .sprite-spades-2 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -395px;
+  background-position: -559px -855px;
 }
 
 .sprite-spades-3 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -565px;
+  background-position: -676px -855px;
 }
 
 .sprite-spades-4 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -735px;
+  background-position: -793px -855px;
 }
 
 .sprite-spades-5 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -905px;
+  background-position: -910px -855px;
 }
 
 .sprite-spades-6 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -1075px;
+  background-position: -1079px -5px;
 }
 
 .sprite-spades-7 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -1245px;
+  background-position: -1058px -175px;
 }
 
 .sprite-spades-8 {
   width: 107px;
   height: 160px;
-  background-position: -1935px -1415px;
+  background-position: -1058px -345px;
 }
 
 .sprite-spades-9 {
   width: 107px;
   height: 160px;
-  background-position: -1877px -1585px;
+  background-position: -1058px -515px;
 }
 
 .sprite-spades-ace {
   width: 107px;
   height: 160px;
-  background-position: -1803px -1755px;
+  background-position: -1058px -685px;
 }
 
 .sprite-spades-king {
   width: 107px;
   height: 160px;
-  background-position: -1920px -1755px;
+  background-position: -1027px -855px;
 }
 
 .sprite-spades-prince {
   width: 107px;
   height: 160px;
-  background-position: -2058px -5px;
+  background-position: -5px -1025px;
 }
 
 .sprite-spades-queen {
   width: 107px;
   height: 160px;
-  background-position: -2052px -175px;
+  background-position: -122px -1025px;
 }
 
 .sprite-whitePuppy {
   width: 150px;
   height: 150px;
-  background-position: -2052px -345px;
+  background-position: -239px -1025px;
 }
 
 .sprite-whitePuppy_s {
   width: 50px;
   height: 50px;
-  background-position: -2052px -505px;
+  background-position: -1144px -855px;
 }

@@ -11,10 +11,14 @@ let screens:Screens;
 let round:Game;
 //The round players.
 let players:UserPlayer[];
-//
+//The indecator if it's the first round.
 let isFirstRound:boolean;
+//An object with data of the current user player at it initialize process.
 let playerMenuData = App.playerMenuData;
 
+/**
+ * The function returns the sum of its array values.
+ */
 function sum(arr:number[]):number{
     let sumArr=0;
     for(let i=0;i<arr.length;i++){
@@ -24,7 +28,7 @@ function sum(arr:number[]):number{
 }
 
 /**
- * The function display the header view in the menu.
+ * The function displays the header view in the menu.
  */
 function headerView(){
     let playerCurrIndex = playerMenuData.getplayerCurrIndex();
@@ -47,7 +51,7 @@ function headerView(){
 }
 
 /**
- * The function display the user player bet choice view in the menu.
+ * The function displays the user player bet choice view in the menu.
  */
 function betView(){
     const moneyCoins =  Deafults.moneyCoins;
@@ -79,7 +83,7 @@ function betView(){
 }
 
 /**
- * The function display the user player name and avater choice view in the menu.
+ * The function displays the user player name and avater choice view in the menu.
  */
 function playerView(){
 
@@ -114,7 +118,7 @@ function playerView(){
 }
 
 /**
- * The function display the buttons view in the menu, when the user choose avatar and player name;
+ * The function displays the buttons view in the menu, when the user choose avatar and player name;
  */
 function btnsNameAndAvatarView(){
     let avatarName = playerMenuData.getavatarName();
@@ -138,7 +142,7 @@ function btnsNameAndAvatarView(){
 }
 
 /**
- * The function display the buttons view in the menu, when the user choose his bet.
+ * The function displays the buttons view in the menu, when the user choose his bet.
  */
 function btnsBetView(){
 
@@ -193,7 +197,7 @@ function btnsBetView(){
 }
 
 /**
- * The function render the screens when changes occures.
+ * The function renders the screens when changes occures.
  */
 function render():void{
     console.log(playerMenuData);
@@ -215,7 +219,7 @@ function render():void{
 
 /**
  * The function that executed after removing to screen 2.
- * it reset varibales and then renders the screen. 
+ * it resets varibales and then renders the screen. 
  */
 export let initializePlayersMenu:Function = ():void =>{
     borderElem =  document.getElementById("screen") as HTMLDivElement;

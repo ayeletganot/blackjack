@@ -30,8 +30,8 @@ export class MenuData{
      */
     reset(isMovingToNextPlayer:boolean){     
         this.playerCurrIndex = isMovingToNextPlayer? this.playerCurrIndex+1  :0;
-        this.coinsArr = [];
-        this.stage = 1 ;   //1-choose player , 2-chhose bet
+        this.coinsArr.length = 0;
+        this.stage = 1 ;   //1-choose player , 2-choose bet
         this.avatarName = "";
         this.name = "";
     }

@@ -5,10 +5,16 @@ import { Game } from "./classes/game";
 import { Deafults } from "./classes/app";
 import { App } from "./classes/app";
 
+//The container element of the entire screen.
 const borderElem = document.getElementById("screen") as HTMLDivElement;
+//The app screens data and actions.  
 let screens:Screens;
+//The app round.
 let round:Game;
 
+/**
+ * The function displays the round counter view in the game.
+ */
 function initializeRoundCounter(){
     const roundCountElem = document.createElement("span");
     roundCountElem.innerHTML = "round " + round.getRoundCounter(); 
@@ -16,7 +22,9 @@ function initializeRoundCounter(){
     borderElem.appendChild(roundCountElem);
 }
 
-
+/**
+ * The function displays the dealer view in the game.
+ */
 function initialDealerView(){
     const dealerCards = round.getDealer().getPlayersCards();
     const playerDisplayCon = document.createElement("div");
@@ -29,12 +37,13 @@ function initialDealerView(){
     playerDisplayCon.appendChild(scoreTitle);
 
     let j = 0;
-    if(!isRoundEnded){
+    if(!isRoundEnded){   // makes back card view if its first card of the dealer and the round isnt over yet.
       const cardElem = document.createElement("img");
       cardElem.className = "sprite sprite-" + "back_card";
       playerDisplayCon.appendChild(cardElem);
       j++;
     }
+    //view of the rest of the dealer cards.
     for(j;j<dealerCards.length;j++){
       const cardElem = document.createElement("img");
       cardElem.className = "sprite sprite-" + dealerCards[j].getShape() + "-" +dealerCards[j].getType();
@@ -44,6 +53,9 @@ function initialDealerView(){
     borderElem.appendChild(playerDisplayCon);
 }
 
+/**
+ * The function displays all the players view in the game.
+ */
 function initialplayerView(){
   const players:UserPlayer[] = round.getPlayers();
   let playerTurn:number = round.getPlayerTurn() as number;
@@ -58,11 +70,13 @@ function initialplayerView(){
     playerDisplayCon.className += ( (!playerTurn) || (playerTurn != i+1) ) ? " notPlayerTurn" : "";
     playerDisplayCon.style.maxWidth =  (80/players.length) + "%";
 
+    //player score display.
     const scoreElem = document.createElement("div");
     scoreElem.className = "scoreTitle";
     scoreElem.innerHTML = players[i].getPlayerScore() + "";
     playerDisplayCon.appendChild(scoreElem);
 
+    //players cards display.
     const playerCardsCon = document.createElement("div");
     playerCardsCon.className = "playerCardsCon";
     playerDisplayCon.appendChild(playerCardsCon);
@@ -74,6 +88,7 @@ function initialplayerView(){
       playerCardsCon.appendChild(cardElem);
     }
 
+    //players avatar display.
     const avatarElem = document.createElement("img");
     avatarElem.className = "sprite sprite-" + players[i].getavatarName() + "_s avatar";
     playerDisplayCon.appendChild(avatarElem);
@@ -82,19 +97,23 @@ function initialplayerView(){
   }
 }
 
+/**
+ * The function displays buttons options view in the game (hit, double, stand)..
+ */
 function initialGameBtns(){
   const players:UserPlayer[] = round.getPlayers();
+  let playerTurn = round.getPlayerTurn() as number;
+  const currPlayer:UserPlayer = players[playerTurn-1];
 
   const btnsCon = document.createElement("div");
   btnsCon.className = "btnsCon";
   borderElem.appendChild(btnsCon);
   
-
+  //hit button display (takes card from the deck).
   const hitBtn = (document.createElement("button") as HTMLElement);
   hitBtn.innerHTML = "hit";
   hitBtn.className = "gamBtn";
   hitBtn.onclick = () =>{
-    let playerTurn = round.getPlayerTurn();
     if( (!playerTurn) || playerTurn == -1) return;
     let canTakeFromDeck:boolean = round.takeCardFromDeck();
    
@@ -109,14 +128,16 @@ function initialGameBtns(){
     else render();
   }
 
-
+  //double button display (doubles the player bet).
   const doubleBtn = (document.createElement("button") as HTMLElement) ;
   doubleBtn.innerHTML = "double"; 
   doubleBtn.className = "gamBtn";
   doubleBtn.onclick = ()=>{
-    let  playerTurn =  round.getPlayerTurn();
     if( (!playerTurn) || playerTurn == -1) return;
-    const currPlayer:UserPlayer = players[playerTurn-1];
+    
+    let roundBet = currPlayer.getRoundBet();
+    //cant bet double if the player dont have enough budget. 
+    if(2*roundBet > currPlayer.getBudget() ) return;
     currPlayer.setRoundBet(2*currPlayer.getRoundBet());
     round.takeCardFromDeck();
     round.moveTurnToNextPlayer();
@@ -128,12 +149,11 @@ function initialGameBtns(){
   }
 
 
-
+  //stand button display (doent do anything and moves the turn to next player).
   const standBtn = (document.createElement("button") as HTMLElement);
   standBtn.innerHTML = "stand";
   standBtn.className = "gamBtn";
   standBtn.onclick = ()=>{
-    let playerTurn = round.getPlayerTurn();
     if((!playerTurn) || playerTurn == -1) return;
     round.moveTurnToNextPlayer();
     render();
@@ -152,7 +172,9 @@ function initialGameBtns(){
 }
 
 
-
+/**
+ * The function displays the end round result view after the round ends..
+ */
 function endRoundDisplay(){
   const players = round.getPlayers();
 
@@ -170,9 +192,11 @@ function endRoundDisplay(){
       playerResultCon.className = "playerResultCon";
       EndRoundMenuCon.appendChild(playerResultCon);
 
+      //display player avatatr. 
       const avatarElem = document.createElement("img");
       avatarElem.className = "sprite sprite-" + players[i].getavatarName() + "_s avatar";
 
+      //display player message of his result (win/lose/push, How much did he earn/lose and updated budget ). 
       const playerStatusDisplay = document.createElement("span");
       playerStatusDisplay.innerHTML = players[i].getName() + " ";
       playerStatusDisplay.className = "playerStatusDisplay";
@@ -203,7 +227,7 @@ function endRoundDisplay(){
    
 
   }
-
+  //start new game button. 
   const startNewGameBtn = document.createElement("button");
   startNewGameBtn.innerHTML = "start new game";
   startNewGameBtn.className = "menuBtn endgameBtn";
@@ -217,6 +241,7 @@ function endRoundDisplay(){
 
   if(!round.isNextRoundPossible() ) return;
 
+   //start new round button. 
   const continueBtn = document.createElement("button");
   continueBtn.innerHTML = "continue to next round";
   continueBtn.className = "menuBtn endgameBtn";
@@ -232,7 +257,9 @@ function endRoundDisplay(){
 }
 
 
-
+/**
+ * The function renders all the parts of the round.
+ */
 function render():void{
 
   Deafults.removeElements(borderElem);
@@ -245,6 +272,10 @@ function render():void{
   }
 }
 
+/**
+ * The function that executed after removing to screen 3.
+ * it resets varibales and then renders the screen. 
+ */
 export function startGame():void{
   borderElem.className += "border";
   screens = App.appScreens;
